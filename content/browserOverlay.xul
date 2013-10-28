@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://lkongrate/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://lkongrate/locale/browserOverlay.dtd">
+
+<overlay id="lkongrate-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+
+  <script type="application/x-javascript"
+    src="chrome://lkongrate/content/browserOverlay.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="lkongrate-string-bundle"
+      src="chrome://lkongrate/locale/browserOverlay.properties" />
+  </stringbundleset>
+
+ 
+   
+  <menubar id="main-menubar">
+    <menu id="lkongrate-hello-menu" label="&lkongrate.hello.label;"
+      accesskey="&lkongrate.helloMenu.accesskey;" insertafter="helpMenu">
+      <menupopup>
+        <menuitem id="lkongrate-hello-menu-item"
+          label="&lkongrate.hello.label;"
+          accesskey="&lkongrate.helloItem.accesskey;"
+          oncommand="lkongrate.BrowserOverlay.sayHello(event);" />
+          
+         <menuitem id="lkongrate-hello-menu-item2"
+          label="bookmark"
+          accesskey="b"
+          oncommand="lkongrate.BrowserOverlay.bookmark(event);" />
+          
+       <menuitem id="lkongrate-hello-menu-item3"
+          label="Showbookmark"
+          accesskey="s"
+          oncommand="lkongrate.BrowserOverlay.showbookmark(event);" />
+
+          
+          
+           <menuitem id="lkongrate-hello-menu-item4"
+          label="About"
+          accesskey="a"
+          oncommand="lkongrate.BrowserOverlay.about(event);" />
+      </menupopup>
+      
+        
+      
+    </menu>
+  </menubar>
+
+  <vbox id="appmenuSecondaryPane">
+    <menu id="lkongrate-hello-menu-2" label="&lkongrate.hello.label;"
+      accesskey="&lkongrate.helloMenu.accesskey;"
+      insertafter="appmenu_addons">
+      <menupopup>
+        <menuitem id="lkongrate-hello-menu-item-2"
+          label="&lkongrate.hello.label;"
+          accesskey="&lkongrate.helloItem.accesskey;"
+          oncommand="lkongrate.BrowserOverlay.sayHello(event);" />
+      </menupopup>
+    </menu>
+  </vbox>
+
+</overlay>

@@ -1,0 +1,5 @@
+content   lkongrate                content/
+skin      lkongrate  classic/1.0   skin/
+locale    lkongrate  en-US         locale/en-US/
+
+overlay chrome://browser/content/browser.xul  chrome://lkongrate/content/browserOverlay.xul
