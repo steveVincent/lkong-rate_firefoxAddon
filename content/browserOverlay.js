@@ -190,6 +190,18 @@ function getTitle(){
 			  title=title.substring(0,title.indexOf("-"));
 		 
 	  
+	  }else if(href.contains("http://chuangshi.qq.com")){
+	        // title=gBrowser.contentDocument.getElementsByClassName("title")[1].getElementsByTagName("strong")[0].firstChild.innerHTML;
+		  var title=content.document.title;
+		  title=title.substring(0,title.indexOf("最新章节"));
+		  if(title.length<=0) {
+			  title=content.document.title;
+			  title=title.substring(0,title.indexOf("目录"));
+			   if(title.length<=0) {
+				  title=content.document.title;
+				  title=title.substring(0,title.indexOf("_"));
+			  }
+		  }
 	  }
 	 
 	  else{
@@ -215,7 +227,10 @@ function getChapter(){
 }
 function lkongrate1(aEvent){
 	 var title=getTitle();
-	  if(title.length>0){
+	 var href=gBrowser.contentDocument.location.href;
+	 if(href.contains("http://chuangshi.qq.com")){
+		 gBrowser.loadOneTab("http://lkong.cn/search/"+title);
+	 }else  if(title.length>0){
 		  let url = "http://www.lkong.net/search.php?formhash=61bd917b&srchtype=title&srhfid=0&searchsubmit=true&mod=book&srchtxt="+title;
 		 
 			let request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
